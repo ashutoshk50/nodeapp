@@ -7,24 +7,24 @@ const DistributorData = require('./src/models/profileModel'); //this is model of
 const profileController = require('./controller/profileController'); // using controller
 const cors = require('cors')
 const port = process.env.PORT || 3000; //setting up port
-//require("./src/database/db"); //establishing a connection with database
+require("./src/database/db"); //establishing a connection with database
 
-var mongoose = require('mongoose');
-var config = require('./config');
-mongoose.set('strictQuery', true);
+// var mongoose = require('mongoose');
+// var config = require('./config');
+// mongoose.set('strictQuery', true);
 
-mongoose.Promise = global.Promise;
-const connectionParams = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-}
-mongoose.connect(config.database, connectionParams)
-    .then(() => {
-        console.log('Connected to database')
-    })
-    .catch((err) => {
-        console.error(`Error connecting to the database. \n${err}`);
-    })
+// mongoose.Promise = global.Promise;
+// const connectionParams = {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+// }
+// mongoose.connect(config.database, connectionParams)
+//     .then(() => {
+//         console.log('Connected to database')
+//     })
+//     .catch((err) => {
+//         console.error(`Error connecting to the database. \n${err}`);
+//     })
 
 //setting up paths for rendering UI
 const staticPath = path.join(__dirname, "public");
